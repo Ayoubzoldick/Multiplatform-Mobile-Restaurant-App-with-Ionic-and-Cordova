@@ -1,0 +1,58 @@
+
+<!-- saved from url=(0122)https://coursera-assessments.s3.amazonaws.com/assessments/1599388829720/a783ad74-dac5-4812-f77b-f16187cb9ead/register.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body><ion-header>
+  <ion-toolbar color="primary-pale">
+    <ion-buttons start="">
+      <button ion-button="" (click)="dismiss()">
+        <span ion-text="" color="primary" showwhen="ios">Cancel</span>
+        <ion-icon name="md-close" showwhen="android, windows"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding="">
+  <ion-card>
+    <ion-card-header color="primary">Your Picture</ion-card-header>
+    <img src="./register_files/{{image}}">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button="" small="" (click)="getPicture()">Take Picture</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button="" small="" (click)="getFromLibrary()">Select Picture</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <form [formgroup]="registerForm" (ngsubmit)="onSubmit()">
+    <ion-item>
+      <ion-label floating="">First Name</ion-label>
+      <ion-input type="text" formcontrolname="firstname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating="">Last Name</ion-label>
+      <ion-input type="text" formcontrolname="lastname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating="">Username</ion-label>
+      <ion-input type="text" formcontrolname="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating="">Password</ion-label>
+      <ion-input type="password" formcontrolname="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating="">Tel. Number</ion-label>
+      <ion-input type="tel" formcontrolname="telnum" pattern="[0-9]*"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating="">Email</ion-label>
+      <ion-input type="email" formcontrolname="email" email=""></ion-input>
+    </ion-item>
+    <button ion-button="" type="submit" [disabled]="!registerForm.valid">Register</button>
+  </form>
+</ion-content></body></html>
